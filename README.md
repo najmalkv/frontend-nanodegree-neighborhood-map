@@ -1,6 +1,6 @@
 ## Frontend Nanodegree Neighborhood Map Project
 
-This is my solution to the Neighborhood Map project of the frontend nanodegree from Udacity. The project is to build a responsive website thats shows atleast 5 locations using markers on google maps in your neighborhood area. The name of the locations have to be displayed in a list that can used by the user to see more information on the location. Clicking on the marker should also display the same information.
+This is my solution to the Neighborhood Map project of the frontend nanodegree from Udacity. The project requirement is to build a responsive website thats shows atleast 5 locations using markers on google maps in your neighborhood area. The name of the locations have to be displayed in a list that can used by the user to see more information on the location. Clicking on the marker should also display the same information.
 
 In my solution the website displays restaurants in the area of edapally in the city of Cochin. I used the zomato API to get information on the restaurants in edapally. To display the map and markers I used the google maps API.
 
