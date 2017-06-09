@@ -122,6 +122,12 @@
 
                 // set the boundaries of the map to fit bounds of the markers created.
                 map.fitBounds(bounds);
+
+                //  set the boundaries of the map to fit bounds of the markers when window is resized
+                google.maps.event.addDomListener(window, 'resize', function() {
+                  map.fitBounds(bounds);
+                });
+
               }
               else {
                 alert("Oops! Unexpected response received from the API. Please refresh the page or try again later.");
@@ -195,16 +201,4 @@
     alert('Error! Unable to load the  google maps API. Please refresh or try again later.');
  }
 
-/* Self invoked function to load google maps api asynchronously and
- * avoid race issue with the api loading before the init and error function are executed.
- */
-
- (function loadGoogleMaps(){
-
-        var script_tag = document.createElement('script');
-        script_tag.setAttribute("src","https://maps.googleapis.com/maps/api/js?key=AIzaSyByHfWjtl0r4XC2BhGENiUo0wNGGAHXZ2w&callback=initMap");
-        script_tag.setAttribute("onError", "mapError()");
-        (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(script_tag);
-
- })();
 
