@@ -189,3 +189,22 @@
      }
 
  }
+
+// Function to handle error in loading the google maps API
+ function mapError() {
+    alert('Error! Unable to load the  google maps API. Please refresh or try again later.');
+ }
+
+/* Self invoked function to load google maps api asynchronously and
+ * avoid race issue with the api loading before the init and error function are executed.
+ */
+
+ (function loadGoogleMaps(){
+
+        var script_tag = document.createElement('script');
+        script_tag.setAttribute("src","https://maps.googleapis.com/maps/api/js?key=AIzaSyByHfWjtl0r4XC2BhGENiUo0wNGGAHXZ2w&callback=initMap");
+        script_tag.setAttribute("onError", "mapError()");
+        (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(script_tag);
+
+ })();
+

@@ -1,7 +1,7 @@
 // Viewmodel to link the model and view
 var ViewModel = function() {
 
-	/* Store the reference to viewmodel in a variable
+	/* create an alias for viewmodel
 	 * to use when the context of the 'this' keyword changes.
 	 */
 	var self = this;
@@ -74,10 +74,10 @@ var ViewModel = function() {
 			// check to avoid running the code inside before the the markers are set.
 			if(typeof markers !== 'undefined'){
 
-				// Iterate through the markers collection and set all markers on the map
+				// Iterate through the markers collection and show all markers on the map
 				markers.forEach(function(marker){
-					if(marker.getMap() === null)
-					marker.setMap(map);
+					if(marker.getVisible() === false)
+					marker.setVisible(true);
 				});
 
 			}
@@ -92,17 +92,17 @@ var ViewModel = function() {
 			  // Check if the restaurant name matches the filter text in input field.
 			  if(item.restaurant.name.toLowerCase().includes(self.filterText().toLowerCase())){
 
-			  	// Set the marker on the map.
-			  	if(markers[index].getMap() === null)
-			  	markers[index].setMap(map);
+			  	// Show the marker on the map.
+			  	if(markers[index].getVisible() === false)
+			  	markers[index].setVisible(true);
 
 			    // Return this item to collection since it matches the filter text.
 			  	return item;
 			  }
 			  else{
 
-			  	// hide the marker from the map
-			  	markers[index].setMap(null);
+			  	// hide the marker on the map
+			  	markers[index].setVisible(false);
 
 			  }
 			});

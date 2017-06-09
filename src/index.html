@@ -10,7 +10,7 @@
 <body>
 <div class="wrap row">
 
-	<div class="left-nav" data-bind="css:{ 'hide-nav': isSideNavHidden}">
+	<aside class="left-nav" data-bind="css:{ 'hide-nav': isSideNavHidden}">
 		<h1 class="main-heading row">Restaurants in Edapally</h1>
 		<div class="filter-area row">
 			<input type="text" class="filter-input" placeholder="Filter by name..." data-bind="value: filterText,valueUpdate: 'keyup'">
@@ -22,22 +22,22 @@
 			<li class="restaurants-list-item" data-bind="text: restaurant.name, click: $parent.showRestaurantInfo, css: { 'restaurant-active': $parent.selRestaurantIndex() === $index()}">
 			</li>
 		</ul>
-	</div>
+	</aside>
 
-	<div class="content-area">
-		<div class="content-header row">
+	<main class="content-area">
+		<header class="content-header row">
 			<span class="menu-btn" data-bind="click: showHideSideNav">&#9776;</span>
-		</div>
-		<div id="map" class="map-area row"></div>
-	</div>
+			<a href="https://developers.zomato.com/api" class="src-attribution">Power by Zomato API</a>
+		</header>
+		<article id="map" class="map-area row"></article>
+	</main>
 
 </div>
 <script src="bower_components/knockout/dist/knockout.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByHfWjtl0r4XC2BhGENiUo0wNGGAHXZ2w&callback=initMap"
-    async defer></script>
+
 
 </body>
 </html>
